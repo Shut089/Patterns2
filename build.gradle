@@ -22,4 +22,9 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    systemProperty "selenide.browser", "chrome"
+    systemProperty "selenide.headless", "true"
+    systemProperty "selenide.disable.browser.reuse", "true"
+    systemProperty "selenide.options",
+            "--no-sandbox --disable-dev-shm-usage --disable-gpu --disable-software-rasterizer"
 }
