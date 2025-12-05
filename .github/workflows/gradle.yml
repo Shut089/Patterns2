@@ -24,7 +24,9 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Run SUT
-        run: java -jar artifacts/app-ibank.jar -P:profile=test & sleep 15
+        run: |
+          java -jar artifacts/app-ibank.jar -P:profile=test &
+          sleep 15
       - name: Build with Gradle
         run: ./gradlew test -Dselenide.headless=true --info
 
